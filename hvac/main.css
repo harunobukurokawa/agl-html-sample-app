@@ -1,5 +1,5 @@
 body {
-	margin-top: 3%;
+	margin-top: 1%;
 }
 
 .background-image{
@@ -11,9 +11,9 @@ body {
 
 /* class */
 .Fan {
-	margin-top:10%;
+	margin-top:5%;
 	margin-left:7%;
-	margin-bottom:10%;
+	margin-bottom:5%;
 	height:20%;
 }
 
@@ -90,9 +90,9 @@ body {
 .AirButton {
 	width:13vw;
 	height:15vw;
-	margin-top: 5%;
+	margin-top: 0%;
 	margin-left: 1%;
-	margin-bottom: 5%;
+	margin-bottom: 0%;
 }
 #AirButtonArea{
 	margin-top:2rem;
