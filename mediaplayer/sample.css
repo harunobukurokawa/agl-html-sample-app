@@ -22,16 +22,11 @@ p {
 	right: 10px;
 }
 
-#currentTime {
-  font-size: 24px;
-}
-#totalTime {
-  font-size: 24px;
+#time {
+  text-align:center;
+  font-size: 48px;
 }
 
-#progressTime {
-  font-size: 24px;
-}
 
 
 button {

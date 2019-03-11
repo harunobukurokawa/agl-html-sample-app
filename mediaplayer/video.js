@@ -11,7 +11,7 @@ var progressTime = document.getElementById('progressTime');
 
 var currentTime = document.getElementById('currentTime');
 video.addEventListener('timeupdate', function() {
-    progressTime.textContent = (Math.floor(video.currentTime)/Math.floor(video.duration)).toFixed(1);
+    progressTime.textContent = (100*Math.floor(video.currentTime)/Math.floor(video.duration)).toFixed(1);
     currentTime.textContent = Math.floor(video.currentTime);
 });
 
