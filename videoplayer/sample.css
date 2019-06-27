@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+body {
+	margin: 0;
+	padding: 0;
+}
+.background-image{
+	width:100%;
+	background:url(./image/AGL_HMI_Blue_Background_NoCar-01.png);
+	background-repeat: no-repeat;
+	background-size:cover;
+}
+
+.back {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+}
+
+p {
+        text-align:center
+}
+
+#seekslider {
+	margin-top:1vw;
+	margin-bottom:1vw;
+	width:60vw;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color:#00ADDC; /*on: 00ADDC */
+	height: 1.5vw;
+	border-radius: 30px;
+}
+#seekslider::-webkit-slider-thumb {
+       -webkit-appearance: none;
+	    appearance: none;
+	    cursor: pointer;
+	    position: relative;
+	    border: none;
+	    width: 2rem;
+	    height: 2rem;
+	    display: block;
+	    background-color: #FFFFFF;
+	    border-radius: 50%;
+	    -webkit-border-radius: 50%;
+	}
+
+
+#video {
+	width:95%;
+	mergin: 10px auto;
+	left: 10px;
+	right: 10px;
+}
+
+#time {
+  text-align:center;
+  font-size: 48px;
+}
+
+.control-layer {
+	height:207pt;
+	background-color : #00000088;
+}
+
+
+button {
+  height :120px;
+  width : 200px;
+  font-size: 32px;
+  background-color : #00000000;
+  border : 0px;
+}
+
+.buttonImg {
+  height : 120px;
+  width : 200px;
+}
