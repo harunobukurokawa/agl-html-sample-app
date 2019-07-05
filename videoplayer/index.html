@@ -7,23 +7,22 @@
 </head>
 <body class="background-image"> <div>
 <p>
-<video id="video" width=1050>
+<video id="video" width=1050 height=800>
   <source src="test.mp4" type="video/mp4" />
 </video>
 </p>
 <div id="time">
  <span id="currentTime">0</span> / <span id="totalTime">0</span> sec
- <br> <span id="progressTime">0</span>%
 </div>
 <div id="control">
 <p class="control-layer">
-  <input id="seekslider" type="range" min="0" max="100" value="0" step="1" ><br>
+    <button  id="Looping">
+      <img class="buttonImg" id="loopimg" src="image/AGL_MediaPlayer_Loop_Active.svg"> </button> 
+  <input id="seekslider" type="range" min="0" max="100" value="0" step="0.1" ><br>
     <button id="previous">
       <img class="buttonImg" id="backImg" src="image/AGL_MediaPlayer_BackArrow.svg"> </button> 
     <button id="play">
       <img class="buttonImg" id="play_img" src="image/AGL_MediaPlayer_Player_Play.svg"> </button>
-    <button  id="Looping">
-      <img class="buttonImg" id="loopimg" src="image/AGL_MediaPlayer_Loop_Active.svg"> </button> 
     <button id="next">
       <img class="buttonImg" id="nextImg" src="image/AGL_MediaPlayer_ForwardArrow.svg"> </button> 
 </p>

@@ -11,7 +11,6 @@ var progressTime = document.getElementById('progressTime');
 
 var currentTime = document.getElementById('currentTime');
 video.addEventListener('timeupdate', function() {
-    progressTime.textContent = (100*Math.floor(video.currentTime)/Math.floor(video.duration)).toFixed(1);
     currentTime.textContent = Math.floor(video.currentTime);
 });
 
@@ -28,37 +27,22 @@ play.addEventListener('click', function () {
         video.play();
         playing = true;
         playImg.src = "image/AGL_MediaPlayer_Player_Pause.svg";
-//        play.textContent = "pause";
     }else {
         video.pause();
         playing = false;
         playImg.src = "image/AGL_MediaPlayer_Player_Play.svg";
- //       play.textContent = "play";
     }
 });
-
-//var stop = document.getElementById('stop');
-//stop.addEventListener('click', function () {
-//    video.pause();
-//    video.currentTime = 0;
-//});
-
-//var pause = document.getElementById('pause');
-//pause.addEventListener('click', function () {
-//    video.pause();
-//});
 
 var ShuffleImg = document.getElementById('loopimg');
 var Looping = document.getElementById('Looping');
 Looping.addEventListener('click', function () {
     if(video.loop){
     	video.loop = false;
-//    Looping.textContent = "Loop Off"
         ShuffleImg.src = "image/AGL_MediaPlayer_Loop_Inactive.svg"
         console.log('loop off');
     }else{
     	video.loop = true;
-//	Looping.textContent = "Loop On"
         ShuffleImg.src = "image/AGL_MediaPlayer_Loop_Active.svg"
         console.log('loop on');
     }
@@ -85,19 +69,10 @@ back.addEventListener('click', function () {
 var next  = document.getElementById('next');
 next.addEventListener('click', function () {
 
-    if ( index >= 2)
+    if ( index == MAX-1)
         index=-1;
       video.src = mp4_name[++index];
-//  if (index == 0 ){
-//    video.src = mp4_name[1];
-//    index = 1;
-//  } else {
-//    video.src = mp4_name[0];
-//    index = 0;
-//  }
-//  if (index >= 2) index = 0;
 if (playing ==true ){
-//    video.load();
     video.play();
 }
         playing = true;
@@ -106,16 +81,21 @@ if (playing ==true ){
 });
 
 var seeking=false, seekto ;
-	seekslider.addEventListener("mousedown", function(event){ seeking=true; seek(event); });
-	seekslider.addEventListener("mousemove", function(event){ seek(event); });
-    seekslider.addEventListener("mouseup",function(){ seeking=false; });
+var slider= document.getElementById("seekslider")
+seekslider.addEventListener("mousedown", function(event){ seeking=true; seek(event); });
+seekslider.addEventListener("mousemove", function(event){ seek(event); });
+seekslider.addEventListener("mouseup",function(){ seeking=false; });
 
-    	function seek(event){
-	    if(seeking){
-		    seekslider.value = event.clientX - seekslider.offsetLeft;
-	        seekto = video.duration * (seekslider.value / 100);
-	        video.currentTime = seekto;
-	    }
+function seek(event){
+    if(seeking){
+        seekto = video.duration * ((event.clientX - seekslider.offsetLeft )/ slider.getBoundingClientRect().width);
+        video.currentTime = seekto;
+	}
+}
+
+    var sliderposition = function(){
+        seekslider.value = (  video.currentTime )/ video.duration * 100 ;
     }
 
-//<meta name="viewport" content="width=device-width,initial-scale=1">
+    setInterval(sliderposition, 250);
+

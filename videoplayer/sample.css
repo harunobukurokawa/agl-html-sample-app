@@ -18,13 +18,13 @@ body {
 }
 
 p {
-        text-align:center
+	text-align:center
 }
 
 #seekslider {
 	margin-top:1vw;
 	margin-bottom:1vw;
-	width:60vw;
+	width:95vw;
 	-webkit-appearance: none;
 	appearance: none;
 	background-color:#00ADDC; /*on: 00ADDC */
@@ -48,8 +48,9 @@ p {
 
 #video {
 	width:95%;
+	height:30vm;
 	mergin: 10px auto;
-	left: 10px;
+	left: 5px;
 	right: 10px;
 }
 
@@ -59,20 +60,23 @@ p {
 }
 
 .control-layer {
-	height:207pt;
+	height:20vw;
 	background-color : #00000088;
 }
 
 
-button {
-  height :120px;
-  width : 200px;
-  font-size: 32px;
-  background-color : #00000000;
-  border : 0px;
+#loopimg {
+	text-align:left;
+	width : 5vw;
 }
 
-.buttonImg {
-  height : 120px;
-  width : 200px;
+button {
+	height : 80px;
+	background-color : #00000000;
+	border : 0px;
+}
+
+img.buttonImg {
+  background-color : #00000000;
+  width : 10vw;
 }
