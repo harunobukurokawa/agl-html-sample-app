@@ -11,5 +11,7 @@
   <feature name="urn:AGL:widget:required-api">
     <param name="windowmanager" value="ws" />
     <param name="homescreen" value="ws" />
+    <param name="HVAC" value="ws" />
+    <param name="identity" value="ws" />
   </feature>
 </widget>
