@@ -1,29 +1,15 @@
-var serverHost = '10.166.19.142';	/* for WiFi */
-var lowCanPort = '31011';	/* low-can-service port */
-var token = 'HELLO'; /* default token in AGL */
+var	m_token = new URLSearchParams(window.location.search).get('token');
+var	afb = new AFB({token:m_token||'HELLO'});
 
-var urlparams = {
-  base: "api",
-  token: "HELLO",
+var ws;
+
+function replyok(obj) {
+        console.log("replyok:" + JSON.stringify(obj));
 }
 
-	var base = new Object();
-	base.host = serverHost + ":" + lowCanPort;
-	base.token = token;
-var	afb = new AFB(base);
-//var afb = new AFB(urlparams, "HELLO");
-var ws;
-var evtidx=0;
-var numid=0;
-
-
-    function replyok(obj) {
-            console.log("replyok:" + JSON.stringify(obj));
-    }
-
-    function replyerr(obj) {
-            console.log("replyerr:" + JSON.stringify(obj));
-    }
+function replyerr(obj) {
+        console.log("replyerr:" + JSON.stringify(obj));
+}
 
 // slide bar
 function changeValue(value){
